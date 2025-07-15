@@ -55,4 +55,6 @@
 - 参数列表:`target_include_directories(<target> [SYSTEM] [AFTER|BEFORE]
   <INTERFACE|PUBLIC|PRIVATE> [items1...]
   [<INTERFACE|PUBLIC|PRIVATE> [items2...] ...])`
-- TODO: 这里`INTERFACE/PUBLIC/PRIVATE`的作用后续补充
+- `PUBLIC`: 当前目标需要, 依赖当前目标的其他目标也需要
+- `INTERFACE`: 当前目标不需要, 但是依赖当前目标的其他目标需要
+- `PRIVATE`: 当前目标需要, 但是依赖当前目标的其他目标不需要
