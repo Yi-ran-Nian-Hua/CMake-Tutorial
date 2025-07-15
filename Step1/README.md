@@ -33,12 +33,15 @@
 - 参数列表: `set(<variable> <value>... [PARENT_SCOPE])`
   - 如果给定了至少一个`<value>`, 那么这个`<variable>`的值就会被设置为`<value>`的值, 如果没有指定, 那就取消赋值, 等价于`unset(<variable>)`
   
-**<PROJECT-NAME>_VERSION_MAJOR**
+**`<PROJECT-NAME>_VERSION_MAJOR`**
+这是一个变量
 当`project()`后面设置了`VERSION`关键字后, 就会获取`major`部分的值
 
-**<PROJECT-NAME>_VERSION_MINOR**
+**`<PROJECT-NAME>_VERSION_MINOR`**
+这是一个变量
 当`project()`后面设置了`VERSION`关键字后, 就会获取`minor`部分的值
-**configure_file()**
+
+**`configure_file()`**
 - 作用: 可以将另外一个文件的内容, 经过内容修改之后, 复制到本项目中来
 - 参数列表: `configure_file(<input> <output>
                [NO_SOURCE_PERMISSIONS | USE_SOURCE_PERMISSIONS |
