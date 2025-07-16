@@ -2,6 +2,7 @@
 
 // TODO 4: include cmath
 #include <iostream>
+#include <cmath>
 
 namespace mathfunctions {
 namespace detail {
@@ -19,19 +20,25 @@ double mysqrt(double x)
   // else, use the existing logic.
 
   // Hint: Don't forget the #endif before returning the result!
-
+#if defined(HAVE_EXP) && defined(HAVE_LOG)
+  double result = std::exp(std::log(x) * 0.5);
+  std::cout << "Computing sqrt of " << x << " to be " << result
+            << " using log and exp" << std::endl;
+#else
   double result = x;
 
   // do ten iterations
-  for (int i = 0; i < 10; ++i) {
-    if (result <= 0) {
+  for (int i = 0; i < 10; ++i)
+  {
+    if (result <= 0)
+    {
       result = 0.1;
     }
     double delta = x - (result * result);
     result = result + 0.5 * delta / result;
     std::cout << "Computing sqrt of " << x << " to be " << result << std::endl;
   }
-
+#endif // HAVE_EXP && HAVE_LOG
   return result;
 }
 }
